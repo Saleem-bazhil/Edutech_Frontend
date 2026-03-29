@@ -1,10 +1,12 @@
 import api from "../Api";
 
-export const ChatApi = async ({ chatId, messages }) => {
+export const ChatApi = async ({ chatId, messages, provider }) => {
   try {
+    console.log("POST /chat provider:", provider);
     const res = await api.post("/chat", {
       chat_id: chatId,
       messages,
+      provider,
     });
 
     const data = res.data;
@@ -24,7 +26,11 @@ export const ChatApi = async ({ chatId, messages }) => {
 
     return JSON.stringify(data.content);
   } catch (error) {
-    console.log(error);
+    console.log("Chat API error:", error);
+    const backendDetail = error?.response?.data?.detail;
+    if (typeof backendDetail === "string" && backendDetail.trim()) {
+      return `Error: ${backendDetail}`;
+    }
     return "Error: Unable to reach AI";
   }
 };

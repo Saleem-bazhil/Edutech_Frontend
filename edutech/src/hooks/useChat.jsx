@@ -1,10 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChatApi, fetchChatMessages } from "../services/ChatApi";
 
-export const useChat = (activeChatId) => {
+export const useChat = (activeChatId, provider = "grok") => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const providerRef = useRef(provider);
+
+  useEffect(() => {
+    providerRef.current = provider;
+  }, [provider]);
 
   useEffect(() => {
     const load = async () => {
@@ -33,7 +38,7 @@ export const useChat = (activeChatId) => {
     }
   };
 
-  const sendMessage = async () => {
+  const sendMessage = async (providerOverride) => {
     const text = input.trim();
     if (!text || loading) return;
     if (!activeChatId) {
@@ -50,9 +55,12 @@ export const useChat = (activeChatId) => {
     setLoading(true);
 
     try {
+      const selectedProvider = providerOverride || providerRef.current;
+      console.log("Sending message with provider:", selectedProvider);
       const replyText = await ChatApi({
         chatId: activeChatId,
-        messages: newMessages, 
+        messages: newMessages,
+        provider: selectedProvider,
       });
 
       const botMsg = { role: "assistant", content: replyText };
