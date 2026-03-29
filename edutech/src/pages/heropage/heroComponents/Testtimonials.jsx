@@ -4,25 +4,25 @@ function Testimonials() {
   const reviews = [
     {
       name: "Sarah Johnson",
-      department: "Computer Science",
+      department: "Frontend Developer",
       review:
-        "EduChat saved me so much time! I got instant answers about exam dates and fee payments. It's like having a personal assistant.",
+        "Bazhil Chat helped me move through UI bugs and component logic much faster. It feels like pairing with someone who understands the problem immediately.",
       avatar: "SJ",
       rating: 5,
     },
     {
       name: "Michael Chen",
-      department: "Business Administration",
+      department: "Backend Engineer",
       review:
-        "The AI is incredibly smart and understands exactly what I need. Best tool for navigating university life!",
+        "I use it when I need quick clarity on APIs, data handling, and implementation decisions. It saves a surprising amount of context-switching time.",
       avatar: "MC",
       rating: 5,
     },
     {
       name: "Emily Rodriguez",
-      department: "Engineering",
+      department: "Full-Stack Developer",
       review:
-        "24/7 support is a game-changer. I can get help with admission queries anytime, even at midnight before deadlines.",
+        "The always-available support is huge. When I get stuck late in the build, I can still work through errors and keep shipping.",
       avatar: "ER",
       rating: 5,
     },
@@ -38,10 +38,10 @@ function Testimonials() {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Student Success Stories
+            Developer Success Stories
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Join thousands of students who are already experiencing smarter university life.
+            See how developers use Bazhil Chat to debug faster, think clearer, and build with confidence.
           </p>
         </div>
 

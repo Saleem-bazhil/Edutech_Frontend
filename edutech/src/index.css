@@ -6,7 +6,18 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
- 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, "Segoe UI", sans-serif;
+  background: #08111f;
+  color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {
@@ -22,4 +33,9 @@ body,
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(168, 85, 247, 1);
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: #f8fafc;
 }

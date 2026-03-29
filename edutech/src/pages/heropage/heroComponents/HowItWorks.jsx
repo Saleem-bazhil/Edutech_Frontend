@@ -2,10 +2,10 @@ import { MessageSquare, Brain, Sparkles, Zap } from "lucide-react";
 
 function HowItWorks() {
   const steps = [
-    { icon: MessageSquare, title: "Ask a Question", description: "Type your query naturally" },
-    { icon: Brain, title: "AI Understands", description: "Advanced processing analyzes intent" },
-    { icon: Sparkles, title: "Gets University Information", description: "Retrieves accurate data instantly" },
-    { icon: Zap, title: "Instant Answer Delivered", description: "Receive clear, helpful response" },
+    { icon: MessageSquare, title: "Describe the Task", description: "Ask about code, bugs, APIs, or architecture in plain language" },
+    { icon: Brain, title: "AI Analyzes Context", description: "It interprets the problem and understands your engineering intent" },
+    { icon: Sparkles, title: "Generate Useful Guidance", description: "Get implementation ideas, explanations, and debugging direction" },
+    { icon: Zap, title: "Build Faster", description: "Use the response to keep shipping without losing momentum" },
   ];
 
   return (
@@ -18,7 +18,7 @@ function HowItWorks() {
             How It Works
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Four simple steps to get the answers you need, powered by intelligent AI.
+            A simple workflow for turning developer questions into clear, useful answers.
           </p>
         </div>
 

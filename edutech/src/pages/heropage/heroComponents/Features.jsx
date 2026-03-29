@@ -11,44 +11,44 @@ function Features() {
   const features = [
     {
       icon: Calendar,
-      title: "Exam Timetable Support",
+      title: "Sprint Planning Support",
       description:
-        "Get instant access to exam schedules, deadlines, and important academic dates.",
+        "Break down features, estimate tasks, and stay aligned on delivery timelines.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: CreditCard,
-      title: "Fee & Payment Guidance",
+      title: "API Integration Guidance",
       description:
-        "Clear information about tuition fees, payment deadlines, and financial aid options.",
+        "Understand endpoints, request flows, auth patterns, and integration steps faster.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: UserCheck,
-      title: "Admission Assistance",
+      title: "Code Review Assistance",
       description:
-        "Navigate the admission process with step-by-step guidance and requirements.",
+        "Get help spotting logic issues, cleanup opportunities, and safer implementation choices.",
       gradient: "from-purple-500 to-blue-500",
     },
     {
       icon: Award,
-      title: "Certificate & ID Card Help",
+      title: "Debugging Help",
       description:
-        "Quick support for certificate requests, ID card issues, and document verification.",
+        "Trace bugs, understand stack traces, and work through broken behavior step by step.",
       gradient: "from-pink-500 to-rose-500",
     },
     {
       icon: Info,
-      title: "Student Affairs Information",
+      title: "System Design Context",
       description:
-        "Stay updated on campus events, clubs, activities, and student services.",
+        "Explore architecture ideas, data flow decisions, and scalable engineering patterns.",
       gradient: "from-indigo-500 to-purple-500",
     },
     {
       icon: MessageSquare,
-      title: "24/7 Instant AI Answers",
+      title: "24/7 Developer Support",
       description:
-        "Get intelligent responses to your questions anytime, anywhere, instantly.",
+        "Get fast, developer-friendly answers whenever you're coding, testing, or shipping.",
       gradient: "from-cyan-500 to-blue-500",
     },
   ];
@@ -63,7 +63,7 @@ function Features() {
             Powerful Features
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Everything you need for a seamless university experience, all in one intelligent platform.
+            Everything developers need to move from idea to implementation with less friction.
           </p>
         </div>
 
