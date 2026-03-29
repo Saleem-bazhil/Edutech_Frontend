@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 function Testimonials() {
   const reviews = [
@@ -29,56 +29,66 @@ function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="relative py-24 px-6">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_70%)]"></div>
+    <section id="testimonials" className="relative px-6 py-24 sm:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(139,92,246,0.14),transparent_55%)]" />
 
-      <div className="max-w-7xl mx-auto relative">
-        
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Developer Success Stories
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            See how developers use Bazhil Chat to debug faster, think clearer, and build with confidence.
+      <div className="relative mx-auto max-w-7xl">
+        <div className="mb-14 flex flex-col gap-6 text-center lg:flex-row lg:items-end lg:justify-between lg:text-left">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-purple-200/80">
+              Testimonials
+            </p>
+            <h2 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+              Developers use Bazhil Chat
+              <span className="block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                to think clearer and build faster
+              </span>
+            </h2>
+          </div>
+          <p className="mx-auto max-w-2xl text-base leading-8 text-gray-400 sm:text-lg lg:mx-0">
+            Real developer feedback focused on speed, clarity, and reduced
+            friction during implementation.
           </p>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
+        <div className="grid gap-5 lg:grid-cols-3">
+          {reviews.map((review) => (
             <div
-              key={index}
-              className="relative bg-white/5 backdrop-blur-2xl rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20"
+              key={review.name}
+              className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-7 backdrop-blur-2xl transition-colors duration-300 hover:border-purple-400/30 hover:bg-white/[0.08]"
             >
-              {/* Rating Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
+              <div className="flex items-center justify-between">
+                <div className="flex gap-1">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-blue-500/10 text-purple-200">
+                  <Quote className="h-5 w-5" />
+                </div>
               </div>
 
-              {/* Review Text */}
-              <p className="text-gray-300 leading-relaxed mb-8 italic">
+              <p className="mt-6 text-lg leading-8 text-gray-300">
                 "{review.review}"
               </p>
 
-              {/* Avatar + Info */}
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center font-bold text-white text-lg shadow-lg ring-4 ring-purple-500/20">
+              <div className="mt-8 flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 text-lg font-bold text-white">
                   {review.avatar}
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-lg">{review.name}</h4>
-                  <p className="text-gray-400 text-sm">{review.department}</p>
+                  <h4 className="text-lg font-semibold text-white">
+                    {review.name}
+                  </h4>
+                  <p className="text-sm text-gray-400">{review.department}</p>
                 </div>
               </div>
-
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

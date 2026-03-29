@@ -26,7 +26,7 @@ function Navbar() {
                   <MessageSquare className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                  EduChat
+                  BazhilChat
                 </span>
               </a>
 

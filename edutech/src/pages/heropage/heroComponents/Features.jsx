@@ -4,7 +4,7 @@ import {
   UserCheck,
   Award,
   Info,
-  MessageSquare
+  MessageSquare,
 } from "lucide-react";
 
 function Features() {
@@ -54,49 +54,61 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="relative py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Powerful Features
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Everything developers need to move from idea to implementation with less friction.
+    <section id="features" className="relative px-6 py-24 sm:py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-14 flex flex-col gap-6 text-center lg:mb-16 lg:flex-row lg:items-end lg:justify-between lg:text-left">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-purple-200/80">
+              Feature Stack
+            </p>
+            <h2 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+              Built like a developer workspace,
+              <span className="block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                not a generic chatbot
+              </span>
+            </h2>
+          </div>
+          <p className="mx-auto max-w-2xl text-base leading-8 text-gray-400 sm:text-lg lg:mx-0">
+            Every block is shaped around how developers actually work: planning,
+            coding, debugging, reviewing, and shipping without losing context.
           </p>
         </div>
 
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-7 backdrop-blur-xl transition-colors duration-300 hover:border-purple-400/30 hover:bg-white/[0.08]"
             >
-              {/* Hover Glow */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-              {/* Icon */}
               <div
-                className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow`}
+                className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.gradient} text-white`}
               >
-                <feature.icon className="w-8 h-8 text-white" />
+                <feature.icon className="h-8 w-8" />
               </div>
 
-              {/* Title */}
-              <h3 className="relative text-2xl font-bold text-white mb-4">
-                {feature.title}
-              </h3>
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-2xl font-semibold text-white">
+                  {feature.title}
+                </h3>
+                <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-gray-400">
+                  0{index + 1}
+                </span>
+              </div>
 
-              {/* Description */}
-              <p className="relative text-gray-400 leading-relaxed">
+              <p className="mt-4 text-base leading-8 text-gray-400">
                 {feature.description}
+              </p>
+
+              <div className="mt-8 h-px w-full bg-gradient-to-r from-purple-500/20 via-white/10 to-blue-500/20" />
+
+              <p className="mt-5 text-sm font-medium text-gray-300 transition-colors duration-300 group-hover:text-white">
+                Developer-focused assistance that stays concise and practical.
               </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -1,12 +1,19 @@
-import { MessageSquare, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import {
+  MessageSquare,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const menuLinks = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "#home" },
     { name: "Features", href: "#features" },
     { name: "About", href: "#about" },
-    { name: "Chat", href: "#chat" },
-    { name: "Contact", href: "#contact" },
+    { name: "Workflow", href: "#how-it-works" },
+    { name: "Testimonials", href: "#testimonials" },
   ];
 
   const socialLinks = [
@@ -17,55 +24,70 @@ function Footer() {
   ];
 
   return (
-    <footer className="relative py-16 px-6 border-t border-purple-500/20">
-      <div className="max-w-7xl mx-auto">
-
-        {/* Top Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center shadow-lg">
-              <MessageSquare className="w-6 h-6 text-white" />
+    <footer className="relative px-6 pb-12 pt-24">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur-2xl sm:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div>
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 text-white">
+                <MessageSquare className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-3xl font-bold text-transparent">
+                  Bazhil Chat
+                </p>
+                <p className="mt-1 text-sm text-gray-400">
+                  AI support designed for focused developer workflows.
+                </p>
+              </div>
             </div>
-            <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              EduChat
-            </span>
+
+            <p className="mt-6 max-w-2xl text-base leading-8 text-gray-300">
+              From debugging sessions to implementation decisions, Bazhil Chat
+              helps teams stay clear, productive, and connected to the work that
+              matters most.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {menuLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-gray-300 transition-colors duration-300 hover:border-purple-400/30 hover:bg-white/[0.08] hover:text-white"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <Link
+                to="/chat"
+                className="rounded-full border border-purple-400/20 bg-gradient-to-r from-purple-600 to-blue-600 px-5 py-2 text-sm font-semibold text-white transition duration-300 hover:brightness-110"
+              >
+                Open Chat
+              </Link>
+            </div>
           </div>
 
-          {/* Menu Links */}
-          <nav className="flex flex-wrap justify-center gap-8">
-            {menuLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="text-gray-400 hover:text-purple-400 transition-colors font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
-          {/* Social Icons */}
-          <div className="flex gap-4">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                className="w-11 h-11 rounded-xl bg-white/5 backdrop-blur-xl border border-purple-500/20 hover:border-purple-500/50 flex items-center justify-center text-gray-400 hover:text-purple-400 transition-all hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20"
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
+          <div className="lg:justify-self-end">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-purple-200/80">
+              Connect
+            </p>
+            <div className="mt-5 flex gap-3">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-gray-300 transition-colors duration-300 hover:border-purple-400/30 hover:bg-white/[0.08] hover:text-white"
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
-
         </div>
 
-        {/* Bottom Section */}
-        <div className="text-center pt-8 border-t border-purple-500/10">
-          <p className="text-gray-500">© 2025 EduChat. All Rights Reserved.</p>
+        <div className="mt-10 border-t border-white/10 pt-6 text-sm text-gray-400">
+          <p>&copy; 2026 Bazhil Chat. All rights reserved.</p>
         </div>
-
       </div>
     </footer>
   );
